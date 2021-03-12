@@ -11,25 +11,25 @@ namespace AutomatDeVanzare
     {
         static int monede = 0;
         static int rest = 0;
-        static char g = 'O';
+        static char m = 'O';
         static void Main(string[] args)
-        {
-            a();
-        }
-        private static void Write()
         {
             Console.WriteLine("Numele meu este Szakacsi Ferenc-Adam");
             Console.WriteLine("Acest program simuleaza un automat de vanzare");
+            a();
+        }
+        private static void Monede()
+        {
+            m = char.Parse(Console.ReadLine());
+            Console.Clear();
+        }
+        private static void Scris()
+        {
             Console.WriteLine($"Ai {monede} centi in automat.");
             Console.WriteLine("Care moneda doresti sa introduci?");
             Console.WriteLine("n - nickel (5 centi)");
             Console.WriteLine("d - dime (10 centi)");
             Console.WriteLine("q - quarter (25 centi)");
-        }
-        private static void GetCoins()
-        {
-            g = char.Parse(Console.ReadLine());
-            Console.Clear();
         }
         private static void a()
         {
@@ -37,10 +37,9 @@ namespace AutomatDeVanzare
             {
                 if (monede < 20)
                 {
-
-                    Write();
-                    GetCoins();
-                    switch (g)
+                    Scris();
+                    Monede();
+                    switch (m)
                     {
                         case 'n':
                             monede += 5;
@@ -81,10 +80,9 @@ namespace AutomatDeVanzare
             {
                 if (monede <= 20)
                 {
-
-                    Write();
-                    GetCoins();
-                    switch (g)
+                    Scris();
+                    Monede();
+                    switch (m)
                     {
                         case 'n':
                             monede += 5;
@@ -121,11 +119,11 @@ namespace AutomatDeVanzare
         }
         private static void c()
         {
-            Write();
-            GetCoins();
+            Scris();
+            Monede();
             try
             {
-                switch (g)
+                switch (m)
                 {
                     case 'n':
                         monede += 5;
@@ -152,11 +150,11 @@ namespace AutomatDeVanzare
         }
         private static void d()
         {
-            Write();
-            GetCoins();
+            Scris();
+            Monede();
             try
             {
-                switch (g)
+                switch (m)
                 {
                     case 'n':
                         monede += 5;
